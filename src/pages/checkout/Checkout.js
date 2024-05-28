@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-  Container, CssBaseline, Stack, Blog, Button, Card, CardContent, Grid, Step,
+  Container, CssBaseline, Stack, Divider, Button, Card, CardContent, Grid, Step,
   StepLabel, Stepper, Typography, Box
 } from '@mui/material';
 
@@ -18,9 +18,10 @@ import { PATH_PAGE } from '../../routes/paths';
 // components
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import { useSettingsContext } from '../../components/settings';
-import { MotionViewport, varFade } from '../../components/animate';
+import { MotionViewport, } from '../../components/animate';
 
-import { useLocales } from '../../locales';
+// import { useLocales } from '../../locales';
+import Footer from '../dashboard/Footer';
 
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
@@ -69,8 +70,9 @@ export default function Checkout() {
           { name: 'Checkout' },
 
         ]}
-      />      <CssBaseline />
-      <Grid container sx={{ height: { xs: '100%', sm: '100dvh' } }}>
+      />
+      <CssBaseline />
+      <Grid container  >
         <Grid
           item
           xs={12}
@@ -88,28 +90,7 @@ export default function Checkout() {
             gap: 4,
           }}
         >
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'end',
-              height: 150,
-            }}
-          >
-            <Button
-              startIcon={<ArrowBackRoundedIcon />}
-              component="a"
-              href="/material-ui/getting-started/templates/landing-page/"
-              sx={{ ml: '-8px' }}
-            >
-              Back to
-              <img
-                src='https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
 
-                style={logoStyle}
-                alt="Sitemark's logo"
-              />
-            </Button>
-          </Box>
           <Box
             sx={{
               display: 'flex',
@@ -122,6 +103,8 @@ export default function Checkout() {
             <Info totalPrice={activeStep >= 2 ? '$144.97' : '$134.98'} />
           </Box>
         </Grid>
+
+
         <Grid
           item
           sm={12}
@@ -296,7 +279,7 @@ export default function Checkout() {
                     gap: 1,
                     pb: { xs: 12, sm: 0 },
                     mt: { xs: 2, sm: 0 },
-                    mb: '60px',
+                    mb: { xs: 190, sm: 80 },
                   }}
                 >
                   {activeStep !== 0 && (
@@ -341,6 +324,14 @@ export default function Checkout() {
             )}
           </Box>
         </Grid>
+      </Grid>
+      <br />
+      <Divider />
+      <br />
+      <br />
+      <br />
+      <Grid>
+        <Footer />
       </Grid>
 
     </Container>

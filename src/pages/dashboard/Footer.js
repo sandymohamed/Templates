@@ -61,19 +61,18 @@ export default function Footer() {
           flexDirection: { xs: 'column', sm: 'row' },
           width: '100%',
           justifyContent: 'space-evenly',
+          alignItems: 'center'
         }}
       >
 
         <Box sx={{ display: 'flex', justifyContent: 'center' }}
         >
 
-          <Box sx={{ ml: '-15px' }}>
             <img
-              src='/assets/images/logo/logo.jpeg'
+              src='/assets/images/logo/logo-1.png'
               style={logoStyle}
               alt="logo"
             />
-          </Box>
 
         </Box>
         <Box

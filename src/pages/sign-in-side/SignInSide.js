@@ -11,9 +11,9 @@ import { PATH_PAGE } from '../../routes/paths';
 // components
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import { useSettingsContext } from '../../components/settings';
-import { MotionViewport, varFade } from '../../components/animate';
+import { MotionViewport,  } from '../../components/animate';
 
-import { useLocales } from '../../locales';
+// import { useLocales } from '../../locales';
 
 // -------------------------------------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ export default function SignInSide() {
 
 
   const { themeStretch } = useSettingsContext();
-  const { translate, currentLang } = useLocales();
+  // const { translate, currentLang } = useLocales();
 
   // const theme = useTheme();
 

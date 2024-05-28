@@ -24,12 +24,13 @@ import { useLocales } from '../../locales';
 export default function LandingPage() {
   const { themeStretch } = useSettingsContext();
 
+  const { currentLang } = useLocales();
 
 
   return (
     <Container maxWidth={themeStretch ? false : 'lg'} sx={{ p: 6, mt: 12 }} component={MotionViewport}>
     <CustomBreadcrumbs
-      heading="Landing Page"
+      heading={currentLang.value === 'ar' ? "الصفحة الرئيسية" : "Landing Page" }
       links={[
         { name: 'Home', href: PATH_PAGE.root },
         { name: 'Landing Page' },

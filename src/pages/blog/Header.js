@@ -13,7 +13,9 @@ function Header(props) {
   return (
     <>
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Button size="small">Subscribe</Button>
+        <Button size="small" component="a"
+          href="/sign-up/"
+          target="_blank">Subscribe</Button>
         <Typography
           component="h2"
           variant="h5"
@@ -27,8 +29,10 @@ function Header(props) {
         <IconButton>
           <SearchIcon />
         </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
+        <Button variant="outlined" size="small" component="a"
+          href="/sign-in-side/"
+          target="_blank">
+          Sign in
         </Button>
       </Toolbar>
       <Toolbar

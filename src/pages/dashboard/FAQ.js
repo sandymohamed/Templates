@@ -61,7 +61,7 @@ export default function FAQ() {
 
             <m.div variants={varFade().inUp}>
               <Typography variant="body1">
-                P.O:6845 Jeddah -21452 Saudi Arabia
+                P.O:0000 Jeddah -00000 Saudi Arabia
               </Typography>
             </m.div>
 
@@ -77,22 +77,22 @@ export default function FAQ() {
               <m.div variants={varFade().inUp}>
                 <Typography variant="h6" >
 
-                  966535377542 +
+                  0000000000000 +
 
                 </Typography>
                 <Typography variant="h6">
-                  966505640325 +
+                  000000000000 +
                 </Typography>
               </m.div>
             ) : (
               <m.div variants={varFade().inUp}>
                 <Typography variant="h6" >
 
-                  + 966535377542
+                  + 000000000
 
                 </Typography>
                 <Typography variant="h6">
-                  +966505640325
+                  +0000000000
                 </Typography>
               </m.div>
             )}
@@ -108,7 +108,7 @@ export default function FAQ() {
 
             <m.div variants={varFade().inUp}>
               <Typography variant="body1">
-                +96626200513
+                +0000000000000
               </Typography>
             </m.div>
             <br />
@@ -120,8 +120,8 @@ export default function FAQ() {
             </m.div>
             <m.div variants={varFade().inUp}>
               <Typography variant="body1">
-                kkastero@khairy.com.sa <br />
-                info@khairy.com.sa
+                support@gmail.com <br />
+                info@gmail.com
               </Typography>
             </m.div>
           </Paper>

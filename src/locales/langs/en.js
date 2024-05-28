@@ -95,14 +95,14 @@ const en = {
   },
   about: {
     title: "who  we are?",
-    desc: "Khairy Trading Industrial Co. was established in 1970 and possesses over 50 years of history based on success and progress within the field, we have had numerous projects over those 50 years, including but not limited to: Makkah’s Holy Haram, King Abdul-Aziz Tower Endowment Project, King Abdul-Aziz University, and King Abdullah University.",
+    desc: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
   },
   Vision: {
     Vision_title: "Vision",
-    Vision_desc: "Becoming one of the leading manufacturers of steel, stainless steel, and aluminum structures in the country as well as a national/region leader in the field. Assisting in achieving the 2030 vision by delivering on both quality and speed for all relevant projects while still doing our due diligence when it comes to evolving and keeping up with new changes in the sector.",
+    Vision_desc: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups..",
 
     Mission_title: "Mission",
-    Mission_desc: "Offering the best-possible service when it comes to quality, cost, and completion times for our clients, utilizing our skilled workforce to provide quick and effective solutions to any inquiries or issues that may arise, and developing our people as leaders who can positively contribute to our company’s performance and the development of the sector.",
+    Mission_desc: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups..",
 
   },
   contact: {

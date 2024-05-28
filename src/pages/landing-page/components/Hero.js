@@ -8,7 +8,13 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
+import { useLocales } from '../../../locales';
+
 export default function Hero() {
+
+  const { currentLang } = useLocales();
+
+
   return (
     <Box
       id="hero"
@@ -32,29 +38,56 @@ export default function Hero() {
         }}
       >
         <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
-          <Typography
-            variant="h1"
-            sx={{
-              display: 'flex',
-              flexDirection: { xs: 'column', md: 'row' },
-              alignSelf: 'center',
-              textAlign: 'center',
-              fontSize: 'clamp(3.5rem, 10vw, 4rem)',
-            }}
-          >
-            Our latest&nbsp;
-            <Typography
-              component="span"
-              variant="h1"
-              sx={{
-                fontSize: 'clamp(3rem, 10vw, 4rem)',
-                color: (theme) =>
-                  theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
-              }}
-            >
-              products
-            </Typography>
-          </Typography>
+
+          {
+            currentLang.value === 'ar' ?
+              <Typography
+                variant="h1"
+                sx={{
+                  display: 'flex',
+                  flexDirection: { xs: 'column', md: 'row' },
+                  alignSelf: 'center',
+                  textAlign: 'center',
+                  fontSize: 'clamp(3.5rem, 10vw, 4rem)',
+                }}
+              >
+
+
+                احدث منتجاتنا
+              </Typography>
+
+              :
+              <Typography
+                variant="h1"
+                sx={{
+                  display: 'flex',
+                  flexDirection: { xs: 'column', md: 'row' },
+                  alignSelf: 'center',
+                  textAlign: 'center',
+                  fontSize: 'clamp(3.5rem, 10vw, 4rem)',
+                }}
+              >
+
+
+                Our latest&nbsp;
+                <Typography
+                  component="span"
+                  variant="h1"
+                  sx={{
+                    fontSize: 'clamp(3rem, 10vw, 4rem)',
+                    color: (theme) =>
+                      theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                  }}
+                >
+                  products
+                </Typography>
+              </Typography>
+
+
+
+          }
+
+
           <Typography
             textAlign="center"
             color="text.secondary"
@@ -119,11 +152,7 @@ export default function Hero() {
                 : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
           })}
         />
-                    {/* <img
-            src='/assets/images/img-1.jpg'
-            alt="home"
-            style={{ width: '100%', height: '100%' }} />
-          </Box> */}
+ 
       </Container>
     </Box>
   );

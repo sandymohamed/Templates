@@ -21,15 +21,19 @@ import Iconify from '../../components/iconify';
 import { useLocales } from '../../locales';
 import MenuPopover from '../../components/menu-popover';
 import LanguagePopover from '../../sections/languages/LanguagePopover';
+import { useSettingsContext } from '../../components/settings';
 //  ---------------------------------------------------------------------------------------
 const logoStyle = {
-  width: '140px',
-  height: 'auto',
+  // width: '140px',
+  height: '65px',
   cursor: 'pointer',
 };
 
 //  ---------------------------------------------------------------------------------------
 function AppAppBar() {
+  const them = useSettingsContext();
+
+  console.log("th", them);
   const { translate, } = useLocales();
 
   const location = useLocation();
@@ -97,7 +101,7 @@ function AppAppBar() {
                   ? 'rgba(255, 255, 255, 0.4)'
                   : 'rgba(0, 0, 0, 0.4)',
               backdropFilter: 'blur(24px)',
-              maxHeight: 40,
+              maxHeight: 50,
               border: '1px solid',
               borderColor: 'divider',
               boxShadow:
@@ -116,111 +120,53 @@ function AppAppBar() {
               }}
             >
               <img
-                src='/assets/images/logo/logo.png'
+                src={them.themeMode === 'dark' ? '/assets/images/logo/logo-1.png' : '/assets/images/logo/logo-2.png'}
+
                 style={logoStyle}
                 alt="logo"
               />
-              {isHome ? (<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <MenuItem
-                  onClick={() => scrollToSection('hero')}
-                  sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    {translate(`nav.home`)}
-                  </Typography>
-                </MenuItem>
+              {isHome ?
+                (<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                  <MenuItem
+                    onClick={() => scrollToSection('hero')}
+                    sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
+                  >
+                    <Typography variant="body2" color="text.primary">
+                      {translate(`nav.home`)}
+                    </Typography>
+                  </MenuItem>
 
-                <MenuItem
-                  onClick={() => scrollToSection('logoCollection')}
-                  sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    {translate(`nav.companies`)}
-                  </Typography>
-                </MenuItem>
+                  <MenuItem
+                    onClick={() => scrollToSection('logoCollection')}
+                    sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
+                  >
+                    <Typography variant="body2" color="text.primary">
+                      {translate(`nav.companies`)}
+                    </Typography>
+                  </MenuItem>
 
-                <MenuItem
-                  onClick={() => scrollToSection('highlights')}
-                  sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    {translate(`nav.services`)}
-                  </Typography>
-                </MenuItem>
-
-
-                <MenuItem
-                  onClick={() => scrollToSection('testimonials')}
-                  sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    {translate(`nav.projects`)}
-                  </Typography>
-                </MenuItem>
-
-
-                <MenuItem onClick={handleOpenPopover} sx={{ py: '6px', px: { md: '6px', lg: '12px' } }} >
-                  <Typography variant="body1" color="text.primary">
-                    {translate(`nav.category`)}
-                  </Typography>
-
-                  {openPopover ? (
-                    <Iconify icon="ic:round-expand-less" width={24} />
-                  ) : (
-                    <Iconify icon="ic:round-expand-more" width={24} />
-                  )}
-                </MenuItem>
-
-                <Button color="inherit" component={Link} sx={{ display: 'block' }} to="/about-us">
-                  {translate(`nav.aboutUs`)}
-
-                </Button>
-                <Button color="inherit" component={Link} sx={{ display: 'block' }} to="/contact-us">
-                  {translate(`nav.contactUs`)}
-
-                </Button>
-
-
-                <MenuPopover anchor="top-left" open={openPopover} onClose={handleClosePopover} sx={{ width: 260, }}>
-                  <Paper sx={{ display: 'block', }}>
-
-                    {[...Array(13)].map((item, index) => (
-
-                      <Button color="inherit" key={index} component={Link} sx={{ display: 'block' }} to={`/category/${translate(`nav.categories.${index}.link`)}`} onClick={handleClosePopover}>
-                        <MenuItem
-
-                          sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
-                        >
-                          {translate(`nav.categories.${index}.title`)}
-
-
-                        </MenuItem>
-                      </Button>
-                    ))}
+                  <MenuItem
+                    onClick={() => scrollToSection('testimonials')}
+                    sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
+                  >
+                    <Typography variant="body2" color="text.primary">
+                      {translate(`nav.projects`)}
+                    </Typography>
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => scrollToSection('highlights')}
+                    sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
+                  >
+                    <Typography variant="body2" color="text.primary">
+                      {translate(`nav.services`)}
+                    </Typography>
+                  </MenuItem>
 
 
 
-                  </Paper>
 
-                </MenuPopover>
-              </Box>) : (
-
-                <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-
-                  <Button color="inherit" component={Link} sx={{ display: 'block' }} to="/">
-                    {translate(`nav.home`)}
-                  </Button>
-                  <Button color="inherit" component={Link} sx={{ display: 'block' }} to="/">
-                    {translate(`nav.services`)}
-
-                  </Button>
-                  <Button color="inherit" component={Link} sx={{ display: 'block' }} to="/">
-                    {translate(`nav.projects`)}
-
-                  </Button>
-
-                  <MenuItem onClick={handleOpenPopover} sx={{ py: '6px', px: { md: '6px', lg: '12px' }, }} >
-                    <Typography variant="body1" color="text.primary">
+                  <MenuItem onClick={handleOpenPopover} sx={{ py: '6px', px: { md: '6px', lg: '12px' } }} >
+                    <Typography variant="body2" color="text.primary">
                       {translate(`nav.category`)}
                     </Typography>
 
@@ -231,32 +177,107 @@ function AppAppBar() {
                     )}
                   </MenuItem>
 
-                  <Button color="inherit" component={Link} sx={{ display: 'block' }} to="/about-us">
-                    {translate(`nav.aboutUs`)}
+                  <Button component={Link} sx={{ display: 'block' }} to="/about-us">
 
+                    <Typography variant="body2" color="text.primary">
+                      {translate(`nav.aboutUs`)}
+                    </Typography>
                   </Button>
-                  <Button color="inherit" component={Link} sx={{ display: 'block' }} to="/contact-us">
-                    {translate(`nav.contactUs`)}
 
+                  <Button component={Link} sx={{ display: 'block' }} to="/contact-us">
+
+                    <Typography variant="body2" color="text.primary">
+                      {translate(`nav.contactUs`)}
+                    </Typography>
                   </Button>
 
                   <MenuPopover anchor="top-left" open={openPopover} onClose={handleClosePopover} sx={{ width: 260, }}>
-                    {[...Array(13)].map((item, index) => (
+                    <Paper sx={{ display: 'block', }}>
 
-                      <Button color="inherit" key={index} component={Link} sx={{ display: 'block' }} to={`/category/${translate(`nav.categories.${index}.link`)}`} onClick={handleClosePopover}>
-                        <MenuItem
-                          sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
-                        >
-                          {translate(`nav.categories.${index}.title`)}
+                      {[...Array(13)].map((item, index) => (
 
-                        </MenuItem>
-                      </Button>
-                    ))}
+                        <Button color="inherit" key={index} component={Link} sx={{ display: 'block' }} to={`/category/${translate(`nav.categories.${index}.link`)}`} onClick={handleClosePopover}>
+                          <MenuItem
+                            sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
+                          >
+                            {translate(`nav.categories.${index}.title`)}
+
+
+                          </MenuItem>
+                        </Button>
+                      ))}
+
+
+
+                    </Paper>
 
                   </MenuPopover>
+                </Box>) : (
 
-                </Box>
-              )}
+                  <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+
+                    <Button color="inherit" component={Link} sx={{ display: 'block' }} to="/">
+                      <Typography variant="body2" color="text.primary">
+                        {translate(`nav.home`)}
+                      </Typography>
+                    </Button>
+
+                    <Button color="inherit" component={Link} sx={{ display: 'block' }} to="/">
+                      <Typography variant="body2" color="text.primary">
+                        {translate(`nav.projects`)}
+                      </Typography>
+
+
+                    </Button>
+                    <Button color="inherit" component={Link} sx={{ display: 'block' }} to="/">
+                      <Typography variant="body2" color="text.primary">
+                        {translate(`nav.services`)}
+                      </Typography>
+                    </Button>
+
+                    <MenuItem onClick={handleOpenPopover} sx={{ py: '6px', px: { md: '6px', lg: '12px' }, }} >
+                      <Typography variant="body1" color="text.primary">
+                        {translate(`nav.category`)}
+                      </Typography>
+
+                      {openPopover ? (
+                        <Iconify icon="ic:round-expand-less" width={24} />
+                      ) : (
+                        <Iconify icon="ic:round-expand-more" width={24} />
+                      )}
+                    </MenuItem>
+
+                    <Button component={Link} sx={{ display: 'block' }} to="/about-us">
+
+                      <Typography variant="body2" color="text.primary">
+                        {translate(`nav.aboutUs`)}
+                      </Typography>
+                    </Button>
+
+                    <Button component={Link} sx={{ display: 'block' }} to="/contact-us">
+
+                      <Typography variant="body2" color="text.primary">
+                        {translate(`nav.contactUs`)}
+                      </Typography>
+                    </Button>
+
+                    <MenuPopover anchor="top-left" open={openPopover} onClose={handleClosePopover} sx={{ width: 260, }}>
+                      {[...Array(13)].map((item, index) => (
+
+                        <Button color="inherit" key={index} component={Link} sx={{ display: 'block' }} to={`/category/${translate(`nav.categories.${index}.link`)}`} onClick={handleClosePopover}>
+                          <MenuItem
+                            sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
+                          >
+                            {translate(`nav.categories.${index}.title`)}
+
+                          </MenuItem>
+                        </Button>
+                      ))}
+
+                    </MenuPopover>
+
+                  </Box>
+                )}
             </Box>
 
 
@@ -344,11 +365,11 @@ function AppAppBar() {
                       <MenuItem onClick={() => scrollToSection('logoCollection')}>
                         {translate(`nav.companies`)}
                       </MenuItem>
-                      <MenuItem onClick={() => scrollToSection('highlights')}>
-                        {translate(`nav.services`)}
-                      </MenuItem>
                       <MenuItem onClick={() => scrollToSection('testimonials')}>
                         {translate(`nav.projects`)}
+                      </MenuItem>
+                      <MenuItem onClick={() => scrollToSection('highlights')}>
+                        {translate(`nav.services`)}
                       </MenuItem>
 
 
@@ -405,11 +426,11 @@ function AppAppBar() {
 
                         </MenuItem>
                         <MenuItem color="inherit" component={Link} sx={{ display: 'block' }} to="/">
-                          {translate(`nav.services`)}
+                          {translate(`nav.projects`)}
 
                         </MenuItem>
                         <MenuItem color="inherit" component={Link} sx={{ display: 'block' }} to="/">
-                          {translate(`nav.projects`)}
+                          {translate(`nav.services`)}
 
                         </MenuItem>
 

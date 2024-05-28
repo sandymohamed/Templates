@@ -18,7 +18,7 @@ import Footer from './Footer';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   textAlign: 'center',
-  paddingTop: theme.spacing(20),
+  paddingTop: theme.spacing(0),
   paddingBottom: theme.spacing(10),
   [theme.breakpoints.up('md')]: {
     textAlign: 'left',
@@ -58,7 +58,7 @@ export default function About() {
                     <m.div variants={varFade().inUp}>
                       <Image
                         alt="our office 1"
-                        src="/assets/images/factory/2.jpg"
+                        src="https://picsum.photos/200/"
                         ratio="3/4"
                         sx={{
                           borderRadius: 2,
@@ -127,7 +127,7 @@ export default function About() {
                     <m.div variants={varFade().inUp}>
                       <Image
                         alt="our office 1"
-                        src="/assets/images/factory/4.jpg"
+                        src="https://picsum.photos/200/300"
                         ratio="3/4"
                         sx={{
                           borderRadius: 2,
@@ -140,7 +140,7 @@ export default function About() {
                     <m.div variants={varFade().inUp}>
                       <Image
                         alt="our office 2"
-                        src="/assets/images/factory/6.jpg"
+                        src="https://picsum.photos/200/400"
                         ratio="1/1"
                         sx={{ borderRadius: 2 }}
                       />
@@ -161,7 +161,7 @@ export default function About() {
                     <m.div variants={varFade().inUp}>
                       <Image
                         alt="our office 2"
-                        src="/assets/images/factory/9.jpg"
+                        src="https://picsum.photos/220/"
                         ratio="1/1"
                         sx={{ borderRadius: 2 }}
                       />

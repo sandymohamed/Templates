@@ -1,7 +1,7 @@
 /* eslint-disable import/no-named-as-default-member */
 import * as React from 'react';
 import { Container , Box, Button, Card, Checkbox, Divider, FormControlLabel, 
-  FormLabel, FormControl, Link, TextField, Typography, Stack, alpha} from '@mui/material';
+  FormLabel, FormControl, Link, TextField, Typography, Stack, } from '@mui/material';
  
 import ForgotPassword from './ForgotPassword';
 import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons';
@@ -11,7 +11,7 @@ import { PATH_PAGE } from '../../routes/paths';
 // components
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import { useSettingsContext } from '../../components/settings';
-import { MotionViewport, varFade } from '../../components/animate';
+import { MotionViewport,  } from '../../components/animate';
 
 import { useLocales } from '../../locales';
 
@@ -20,6 +20,9 @@ import { useLocales } from '../../locales';
 
 export default function SignIn() {
   const { themeStretch } = useSettingsContext();
+
+  const { currentLang } = useLocales();
+
 
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
@@ -76,10 +79,10 @@ export default function SignIn() {
   return (
     <Container maxWidth={themeStretch ? false : 'lg'} sx={{ p: 6, mt: 12 }} component={MotionViewport}>
     <CustomBreadcrumbs
-      heading="category Details"
+      heading={ currentLang.value === 'ar' ?  'تسجيل الدخول' :'Sign In Side'}
       links={[
-        { name: 'Home', href: PATH_PAGE.root },
-        { name: 'Sign In Side' },
+        { name:  currentLang.value === 'ar' ? 'الصفحة الرئيسية': 'Home', href: PATH_PAGE.root },
+        { name: currentLang.value === 'ar' ?  'تسجيل الدخول' :'Sign In Side' },
 
       ]}
     />
