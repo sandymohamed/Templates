@@ -2,11 +2,9 @@ import { Navigate, useRoutes } from 'react-router-dom';
 
 
 import {
-
   Page500,
   Page403,
   Page404,
-  HomePage,
   CategoryDetailsPage,
   AboutPage,
   Contact,

@@ -30,7 +30,7 @@ function Copyright(props) {
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
-      {'.'}
+      .
     </Typography>
   );
 }

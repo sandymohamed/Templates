@@ -21,7 +21,7 @@ import { PATH_PAGE } from '../../routes/paths';
 // components
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import { useSettingsContext } from '../../components/settings';
-import { MotionViewport, varFade } from '../../components/animate';
+import { MotionViewport,  } from '../../components/animate';
 
 const sections = [
   { title: 'Technology', url: '#' },

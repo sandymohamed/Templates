@@ -25,7 +25,7 @@ export default function Chart() {
   const theme = useTheme();
 
   return (
-    <React.Fragment>
+    <>
       <Title>Today</Title>
       <div style={{ width: '100%', flexGrow: 1, overflow: 'hidden' }}>
         <LineChart
@@ -72,6 +72,6 @@ export default function Chart() {
           }}
         />
       </div>
-    </React.Fragment>
+    </>
   );
 }

@@ -19,6 +19,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {'Copyright © '}
+      
       <Link href="https://www.linkedin.com/in/sandy-mohammed-developer/">Sandy Mohammed</Link>
       {new Date().getFullYear()}
     </Typography>

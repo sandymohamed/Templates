@@ -1,5 +1,4 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -9,9 +8,8 @@ import CardHeader from '@mui/material/CardHeader';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import StarIcon from '@mui/icons-material/StarBorder';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 
@@ -20,27 +18,26 @@ import { PATH_PAGE } from '../../routes/paths';
 // components
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import { useSettingsContext } from '../../components/settings';
-import { MotionViewport, varFade } from '../../components/animate';
+import { MotionViewport,  } from '../../components/animate';
 
-import { useLocales } from '../../locales';
 import Footer from '../dashboard/Footer';
 
 // -------------------------------------------------------------------------------------------------------
 
 
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
+// function Copyright(props) {
+//   return (
+//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
+//       {'Copyright © '}
+//       <Link color="inherit" href="https://mui.com/">
+//         Your Website
+//       </Link>{' '}
+//       {new Date().getFullYear()}
      
-    </Typography>
-  );
-}
+//     </Typography>
+//   );
+// }
 
 const tiers = [
   {
@@ -82,30 +79,30 @@ const tiers = [
   },
 ];
 
-const footers = [
-  {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
-  },
-  {
-    title: 'Features',
-    description: [
-      'Cool stuff',
-      'Random feature',
-      'Team feature',
-      'Developer stuff',
-      'Another one',
-    ],
-  },
-  {
-    title: 'Resources',
-    description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-  },
-  {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
-  },
-];
+// const footers = [
+//   {
+//     title: 'Company',
+//     description: ['Team', 'History', 'Contact us', 'Locations'],
+//   },
+//   {
+//     title: 'Features',
+//     description: [
+//       'Cool stuff',
+//       'Random feature',
+//       'Team feature',
+//       'Developer stuff',
+//       'Another one',
+//     ],
+//   },
+//   {
+//     title: 'Resources',
+//     description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
+//   },
+//   {
+//     title: 'Legal',
+//     description: ['Privacy policy', 'Terms of use'],
+//   },
+// ];
 
 
 export default function Pricing() {
