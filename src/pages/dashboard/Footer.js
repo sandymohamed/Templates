@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/X';
 import { useLocales } from '../../locales';
 
 const logoStyle = {
@@ -20,7 +19,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {'Copyright © '}
-      <Link href="#">Khairy Trading Industrial&nbsp;</Link>
+      <Link href="https://www.linkedin.com/in/sandy-mohammed-developer/">Sandy Mohammed</Link>
       {new Date().getFullYear()}
     </Typography>
   );
@@ -137,7 +136,7 @@ export default function Footer() {
         >
           <IconButton
             color="inherit"
-            // href="https://github.com/mui"
+            href="https://github.com/sandymohamed"
             aria-label="GitHub"
             sx={{ alignSelf: 'center' }}
           >
@@ -145,15 +144,7 @@ export default function Footer() {
           </IconButton>
           <IconButton
             color="inherit"
-            // href="https://twitter.com/MaterialUI"
-            aria-label="X"
-            sx={{ alignSelf: 'center' }}
-          >
-            <TwitterIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            // href="https://www.linkedin.com/company/mui/"
+            href="https://www.linkedin.com/in/sandy-mohammed-developer/"
             aria-label="LinkedIn"
             sx={{ alignSelf: 'center' }}
           >

@@ -194,7 +194,7 @@ function AppAppBar() {
                   <MenuPopover anchor="top-left" open={openPopover} onClose={handleClosePopover} sx={{ width: 260, }}>
                     <Paper sx={{ display: 'block', }}>
 
-                      {[...Array(13)].map((item, index) => (
+                      {[...Array(2)].map((item, index) => (
 
                         <Button color="inherit" key={index} component={Link} sx={{ display: 'block' }} to={`/category/${translate(`nav.categories.${index}.link`)}`} onClick={handleClosePopover}>
                           <MenuItem
@@ -262,7 +262,7 @@ function AppAppBar() {
                     </Button>
 
                     <MenuPopover anchor="top-left" open={openPopover} onClose={handleClosePopover} sx={{ width: 260, }}>
-                      {[...Array(13)].map((item, index) => (
+                      {[...Array(2)].map((item, index) => (
 
                         <Button color="inherit" key={index} component={Link} sx={{ display: 'block' }} to={`/category/${translate(`nav.categories.${index}.link`)}`} onClick={handleClosePopover}>
                           <MenuItem
@@ -400,7 +400,7 @@ function AppAppBar() {
                       <Collapse in={openCollapse} timeout="auto">
                         <Paper sx={{ display: 'block', }}>
 
-                          {[...Array(13)].map((item, index) => (
+                          {[...Array(2)].map((item, index) => (
 
                             <MenuItem
                               key={index}
@@ -461,14 +461,13 @@ function AppAppBar() {
                         <Collapse in={openCollapse} timeout="auto">
                           <Paper sx={{ display: 'block', mt: 8, }}>
 
-                            {[...Array(13)].map((item, index) => (
+                            {[...Array(2)].map((item, index) => (
                               <MenuItem
                                 key={index}
                                 sx={{ py: '6px', px: { md: '6px', lg: '12px' } }}
                               >
                                 <Button color="inherit" component={Link} sx={{ display: 'block' }} to={`/category/${translate(`nav.categories.${index}.link`)}`}>
                                   {translate(`nav.categories.${index}.title`)}
-
                                 </Button>
 
                               </MenuItem>
